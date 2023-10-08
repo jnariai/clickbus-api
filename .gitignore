@@ -1,0 +1,37 @@
+# IDE artifacts
+.idea/
+.vscode/
+
+# Maven artifacts
+/.mvn/
+**/target/
+
+# Gradle artifacts
+/.gradle/
+**/build/
+
+# Local development environment files
+**/.env
+**/.env.development
+**/.env.production
+
+# Build artifacts
+**/.class
+**/.jar
+**/.war
+
+# Log files
+**/.log
+**/.log.*
+**/logs/
+
+# Test output
+**/test-output/*
+
+# Miscellaneous
+*.iml
+*.ipr
+*.iws
+*.swp
+*~
+HELP.md

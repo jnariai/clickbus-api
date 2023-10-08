@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  clickbus-db:
+    image: postgres:16.0-alpine3.18
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=clickbus-places
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+
+  clickbus-api:
+    image: jnariai/clickbus-api:1.0.0
+    restart: always
+    environment:
+      - POSTGRES_HOST=jdbc:postgresql://clickbus-db:5432/clickbus-places
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - API_PORT=8080
+      - PROFILE=prod
+    depends_on:
+      - clickbus-db
+    ports:
+      - '8080:8080'

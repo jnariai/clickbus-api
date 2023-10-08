@@ -1,0 +1,26 @@
+insert
+	into
+	public.place
+(id,
+	city,
+	"name",
+	slug,
+	state)
+values('1',
+'Maringá',
+'Terminal',
+'terminal',
+'Paraná');
+insert
+	into
+	public.place
+(id,
+	city,
+	"name",
+	slug,
+	state)
+values('2',
+'Maringá',
+'Parque do Japão',
+'parque-do-japao',
+'Paraná');
